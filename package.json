@@ -1,8 +1,12 @@
 {
   "name": "holiday.cn",
   "version": "0.0.1",
-  "description": "Chinese holidays.",
+  "description": "Get holidays in China:cn:.",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "dependencies": {
     "ilunar": "0.0.3"
   },
@@ -18,5 +22,20 @@
     "test": "mocha"
   },
   "author": "solome",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solome/holiday.cn.git"
+  },
+  "keywords": [
+    "holiday",
+    "chinese holiday"
+  ],
+  "bugs": {
+    "url": "https://github.com/solome/holiday.cn/issues"
+  },
+  "homepage": "https://github.com/solome/holiday.cn#readme"
 }

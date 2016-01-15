@@ -25,6 +25,7 @@ describe('ilunar', function() {
       assert.equal(holidayCn(new Date('2015-08-20'))[0], '七夕');
       assert.equal(holidayCn(new Date('2018-11-11')).length, 0);
       assert.equal(holidayCn(new Date('2018-12-25'))[0], '圣诞');
+      assert.equal(holidayCn(new Date('2016-02-07'))[0], '除夕');
 
     });
 

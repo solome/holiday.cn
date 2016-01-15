@@ -26,7 +26,6 @@ const LUNAR_HOLIDAYS = {
   '0815': '中秋',
   '0909': '重阳',
   '1208': '腊八',
-  '1230': '除夕',
 };
 
 const _format = num => num >= 0 && num < 10 ? '0' + num : '' + num;
@@ -46,6 +45,16 @@ const _qingming = date => {
   return (((y - 2000)/2 )%2 ? 5 : 4) === d;
 };
 
+/**
+ * `除夕`的判断，`春节`的前一天。
+ */
+const _chuxi = date => {
+  const nextDate = new Date(date);
+  nextDate.setDate(date.getDate() + 1);
+  const lDate = solar2Lunar(nextDate).lunar;
+  return '0101' === (_format(lDate.month) + _format(lDate.date));
+};
+
 const holidayCn = (date, solar=true, lunar=true) => {
   let ret = [];
   if (lunar) {
@@ -56,6 +65,9 @@ const holidayCn = (date, solar=true, lunar=true) => {
     }
     if (_qingming(date)) {
       ret.push('清明');
+    }
+    if (_chuxi(date)) {
+      ret.push('除夕');
     }
   }
   if (solar) {
